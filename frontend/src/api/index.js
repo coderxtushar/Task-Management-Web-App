@@ -1,4 +1,5 @@
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const API = axios.create({
     baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
@@ -20,9 +21,7 @@ API.interceptors.response.use(
             const msg = error.response.data.msg;
             // Suppress specific annoying notifications from bubbling up globally
             if (msg !== 'Invalid project ID format') {
-                import('react-hot-toast').then(module => {
-                    module.default.error(msg);
-                });
+                toast.error(msg);
             }
         }
         return Promise.reject(error);
