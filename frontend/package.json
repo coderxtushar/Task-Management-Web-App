@@ -4,11 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "start": "serve -s dist -p $PORT",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "dev": "react-scripts start"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
